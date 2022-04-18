@@ -12,6 +12,8 @@ int (*check_specifier(const char *fmt))(va_list)
 	print_t func[] = {
 		{"c", print_c},
 		{"s", print_s},
+		{"d", print_di},
+		{"i", print_di},
 		{NULL, NULL}
 	};
 
