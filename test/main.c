@@ -1,6 +1,6 @@
 #include <limits.h>
 #include <stdio.h>
-#include "main.h"
+#include "../main.h"
 #include <stdlib.h>
 /**
  * main - Entry point
@@ -11,6 +11,9 @@ int main(void)
 {
 	int len;
     	int len2;
+    _printf("Unsigned hexadecimal:[%x]\n", 77497352);
+    printf("Unsigned hexadecimal:[%x]\n", 77497352);
+	
 	len = _printf("Let's try to _printf a simple sentence.\n");
     len2 = printf("Let's try to printf a simple sentence.\n");
     	_printf("Length _printf:[%d, %i]\n", len, len);

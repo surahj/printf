@@ -15,6 +15,7 @@ int (*check_specifier(const char *fmt))(va_list)
 		{"d", print_di},
 		{"i", print_di},
 		{"b", print_b},
+		{"x", print_x},
 		{NULL, NULL}
 	};
 
