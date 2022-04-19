@@ -47,5 +47,10 @@ u - unsigned integer
 
 p - pointer address
 
+# Examples
+Character: printf("%c", A); Output:: A
 
+String: printf("%s", This is a string.); Output: This is a string.
+
+Integer: printf("%i", 5); Output: 5
 
