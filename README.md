@@ -18,6 +18,34 @@ Here are some examples
 .BR This means Bold Roman alternating
 .IP idented paragraph
 
+#Supported Format Types
+TYPE - OUTPUT
+
+c - Single character
+
+s - String of character
+
+r - String in reverse
+
+R - String in rot13
+
+d - Integer in decimal
+
+i - integer
+
+% - Percent sign
+
+x - Lowercase hex(loervase)
+
+X - Uppercase hex (unsigned)
+
+b - signed binary
+
+o - signed octal
+
+u - unsigned integer
+
+p - pointer address
 
 
 
