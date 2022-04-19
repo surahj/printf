@@ -11,6 +11,14 @@ int main(void)
 {
 	int len;
     	int len2;
+	unsigned int ui;
+	ui = (unsigned int)INT_MAX + 1024;
+	_printf("Unsigned:[%u]\n", ui);
+    printf("Unsigned:[%u]\n", ui);
+    _printf("Unsigned octal:[%o]\n", ui);
+    printf("Unsigned octal:[%o]\n", ui);
+    _printf("Unsigned hexadecimal:[%x, %X]\n", ui, ui);
+    printf("Unsigned hexadecimal:[%x, %X]\n", ui, ui);
     _printf("Unsigned hexadecimal:[%x]\n", 77497352);
     printf("Unsigned hexadecimal:[%x]\n", 77497352);
 	
