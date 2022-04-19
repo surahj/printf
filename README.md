@@ -18,9 +18,9 @@ Here are some examples
 .BR This means Bold Roman alternating
 .IP idented paragraph
 
-#Supported Format Types
-TYPE - OUTPUT
+# Supported Format Types
 
+TYPE - OUTPUT
 c - Single character
 
 s - String of character
