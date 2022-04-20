@@ -3,6 +3,7 @@
 #include <stdarg.h>
 #include <stdio.h>
 #include <limits.h>
+#include <unistd.h>
 
 /**
  * struct print - structure for printing various types
@@ -40,4 +41,6 @@ int print_less(va_list less);
 int print_space(va_list space);
 int print_sharp(va_list sharp);
 unsigned int handl_buf(char *buf, char c, unsigned int ibuf);
+int print_buf(char *buf, unsigned int nbuf);
+
 #endif
