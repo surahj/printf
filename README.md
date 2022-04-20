@@ -54,3 +54,6 @@ String: printf("%s", This is a string.); Output: This is a string.
 
 Integer: printf("%i", 5); Output: 5
 
+# File Functions
+_printf.c Own Printf Function Tha Performs Formatted Output Conversion And Print Data.
+
