@@ -40,5 +40,4 @@ int print_less(va_list less);
 int print_space(va_list space);
 int print_sharp(va_list sharp);
 unsigned int handl_buf(char *buf, char c, unsigned int ibuf);
-
 #endif
