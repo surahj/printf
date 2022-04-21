@@ -1,31 +1,44 @@
 #include "main.h"
 
 /**
- * print_o - A function that prints an unsigned int in octal notation
- * @o: unsigned int to print
- * Return: number of printed digits
+ * print_oct - prints decimal number in octal
+ * @arguments: input number
+ * @buf: buffer pointer
+ * @ibuf: index for buffer pointer
+ * Return: number of chars printed.
  */
-int print_o(va_list o)
+int print_oct(va_list arguments, char *buf, unsigned int ibuf)
 {
-	unsigned int a[11];
-	unsigned int j = 1, m = 1073741824, n, sum = 0;
-	int counter;
+	int int_input, i, isnegative, count, first_digit;
+	char *octal, *binary;
 
-	n = va_arg(o, unsigned int);
-	a[0] = n / m;
-	for (; j < 11; j++)
+	int_input = va_arg(arguments, int);
+	isnegative = 0;
+	if (int_input == 0)
 	{
-		m /= 8;
-		a[j] = (n / m) % 8;
+		ibuf = handl_buf(buf, '0', ibuf);
+		return (1);
 	}
-	for (j = 0; j < 11; j++)
+	if (int_input < 0)
 	{
-		sum += a[j];
-		if (sum || j == 10)
+		int_input = (int_input * -1) - 1;
+		isnegative = 1;
+	}
+	binary = malloc(sizeof(char) * (32 + 1));
+	binary = fill_binary_array(binary, int_input, isnegative, 32);
+	octal = malloc(sizeof(char) * (11 + 1));
+	octal = fill_oct_array(binary, octal);
+	for (first_digit = i = count = 0; octal[i]; i++)
+	{
+		if (octal[i] != '0' && first_digit == 0)
+			first_digit = 1;
+		if (first_digit)
 		{
-			_putchar('0' + a[j]);
-			counter++;
+			ibuf = handl_buf(buf, octal[i], ibuf);
+			count++;
 		}
 	}
-	return (counter);
+	free(binary);
+	free(octal);
+	return (count);
 }
