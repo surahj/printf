@@ -1,40 +1,42 @@
 #include "main.h"
-#include <stdlib.h>
 
 /**
- * print_di - A function that prints a decimal base 10
- * and integer
- * @di: base 10 integer to print
- * Return: number of printed digits
+ * print_int - prints an integer
+ * @arguments: input string
+ * @buf: buffer pointer
+ * @ibuf: index for buffer pointer
+ * Return: number of chars printed.
  */
-int print_di(va_list di)
+int print_int(va_list arguments, char *buf, unsigned int ibuf)
 {
-	int a[10];
-	int j = 1, m = 1000000000, n, sum = 0, counter = 0;
+	int int_input;
+	unsigned int int_in, int_temp, i, div, isneg;
 
-	n = va_arg(di, int);
-	if (n < 0)
+	int_input = va_arg(arguments, int);
+	isneg = 0;
+	if (int_input < 0)
 	{
-		n *= -1;
-		_putchar('-');
-		counter++;
+		int_in = int_input * -1;
+		ibuf = handl_buf(buf, '-', ibuf);
+		isneg = 1;
 	}
-	a[0] = n / m;
-
-	for (; j < 10; j++)
+	else
 	{
-		m /= 10;
-		a[j] = (n / m) % 10;
+		int_in = int_input;
 	}
 
-	for (j = 0; j < 10; j++)
+	int_temp = int_in;
+	div = 1;
+
+	while (int_temp > 9)
 	{
-		sum += a[j];
-		if (sum != 0 || j == 9)
-		{
-			_putchar('0' + a[j]);
-			counter++;
-		}
+		div *= 10;
+		int_temp /= 10;
 	}
-	return (counter);
+
+	for (i = 0; div > 0; div /= 10, i++)
+	{
+		ibuf = handl_buf(buf, ((int_in / div) % 10) + '0', ibuf);
+	}
+	return (i + isneg);
 }
